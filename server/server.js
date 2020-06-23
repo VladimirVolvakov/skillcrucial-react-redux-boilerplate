@@ -12,6 +12,7 @@ let connections = []
 
 const port = process.env.PORT || 3000
 const server = express()
+// const { readFile, writeFile, stat, unlink } = require('fs').promises
 
 server.use(cors())
 
@@ -59,6 +60,45 @@ server.get('/*', (req, res) => {
     })
   )
 })
+
+/*
+app.get('/api/v1/users', (req, res) => {
+  res.stat(`${__dirname}/test.json`)  
+  .then(data => JSON.stringify(data))  
+   .catch((err) => axios('https://jsonplaceholder.typicode.com/users'))
+     .then((response) => response.data)
+       .then(data => JSON.stringify(data)))
+  res.writeFile(`${__dirname}/test.json`, text, { encoding: "utf8" })
+  res.set('x-skillcrucial-user', 'e8c5c8c8-7de8-422e-a369-90ffad53b5a7')
+  res.set('Access-Control-Expose-Headers', 'X-SKILLCRUCIAL-USER')
+  res.json(`${__dirname}/test.json`)
+  res.end()
+})
+
+app.post('/api/v1/users', (req, res) => {
+  res.set('x-skillcrucial-user', 'e8c5c8c8-7de8-422e-a369-90ffad53b5a7')
+  res.set('Access-Control-Expose-Headers', 'X-SKILLCRUCIAL-USER')
+  res.end()
+})
+
+app.patch('/api/v1/users/:userId', (req, res) => {
+  res.set('x-skillcrucial-user', 'e8c5c8c8-7de8-422e-a369-90ffad53b5a7')
+  res.set('Access-Control-Expose-Headers', 'X-SKILLCRUCIAL-USER')
+  res.end()
+})
+
+app.delete('/api/v1/users/:userId', (req, res) => {
+  res.set('x-skillcrucial-user', 'e8c5c8c8-7de8-422e-a369-90ffad53b5a7')
+  res.set('Access-Control-Expose-Headers', 'X-SKILLCRUCIAL-USER')
+  res.end()
+})
+
+app.delete('/api/v1/users/', (req, res) => {
+  res.set('x-skillcrucial-user', 'e8c5c8c8-7de8-422e-a369-90ffad53b5a7')
+  res.set('Access-Control-Expose-Headers', 'X-SKILLCRUCIAL-USER')
+  res.end()
+})
+*/
 
 const app = server.listen(port)
 
