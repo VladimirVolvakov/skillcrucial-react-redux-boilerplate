@@ -62,6 +62,14 @@ server.get('/*', (req, res) => {
 })
 
 /*
+Лёша, вот об этом API я вел речь. Твои требования к нему согласно задания:
+Создать следующее api:
+get /api/v1/users - получает всех юзеров из файла users.json, если его нет - получает данные с сервиса https://jsonplaceholder.typicode.com/users и заполняет файл users.json y и возвращает данные.
+В каждом API запросе вы должны установить заголовок перед тем, как вернуть ответ с помощью res.json
+res.set('x-skillcrucial-user', 'e8c5c8c8-7de8-422e-a369-90ffad53b5a7');  
+res.set('Access-Control-Expose-Headers', 'X-SKILLCRUCIAL-USER')
+
+
 app.get('/api/v1/users', (req, res) => {
   res.stat(`${__dirname}/test.json`)  
   .then(data => JSON.stringify(data))  
